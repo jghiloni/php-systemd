@@ -6,11 +6,15 @@ PHP extension allowing native interaction with systemd and journald
 Installation
 ------------
 
+### Prebuilt Binaries
+
+.so files for Ubuntu are available in the [Releases](./releases) page.
+
 ### Prerequisites
 
 .deb based
 
-    sudo apt install php5-dev  libsystemd-dev
+    sudo apt install php8.5-dev  libsystemd-dev
 
 .rpm based
 
@@ -30,10 +34,10 @@ Fedora
 
     echo "extension=systemd.so" | sudo tee /etc/php.d/systemd.ini
 
-Debian (PHP 5)
+Debian (PHP 8.5)
 
-    echo "extension=systemd.so" | sudo tee /etc/php5/mods-available/systemd.ini
-    sudo php5enmod systemd
+    echo "extension=systemd.so" | sudo tee /etc/php8.5/mods-available/systemd.ini
+    sudo php8.5enmod systemd
 
 ### Basic Test
 
