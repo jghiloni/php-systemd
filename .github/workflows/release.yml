@@ -30,10 +30,11 @@ jobs:
           ./configure --with-systemd
           make
           mv modules/systemd.so modules/ubuntu-${{ matrix.versions.os }}-php-${{ matrix.versions.php }}-systemd.so.${VERSION#v*}
+          echo "so_version=${VERSION#v*}" >> ${GITHUB_OUTPUT}
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v7.0.1
         with:
-          name: module_${{ matrix.versions.os }}_php_${{ matrix.versions.php }}_${{ github.ref_name }}
+          name: ubuntu-${{ matrix.versions.os }}-php-${{ matrix.versions.php }}-systemd.so.${{ steps.build.outputs.so_version }}
           path: modules/ubuntu-${{ matrix.versions.os }}-php-${{ matrix.versions.php }}-systemd.so.*
   create-release:
     runs-on: ubuntu-latest
