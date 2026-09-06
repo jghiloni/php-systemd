@@ -51,4 +51,4 @@ jobs:
           generate_release_notes: true
           files: |
             php_systemd.h
-            ubuntu-*-systemd.so.*
+            built-modules/*
