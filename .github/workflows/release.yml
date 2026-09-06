@@ -33,6 +33,7 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v7.0.1
         with:
+          name: module_${{ matrix.versions.os }}_php_${{ matrix.versions.php }}_${{ github.ref_name }}
           path: modules/ubuntu-${{ matrix.versions.os }}-php-${{ matrix.versions.php }}-systemd.so.*
   create-release:
     runs-on: ubuntu-latest
